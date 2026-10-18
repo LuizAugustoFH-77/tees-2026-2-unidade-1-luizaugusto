@@ -19,7 +19,8 @@ expõe um *grafo de tipos* consultável pelo cliente em uma única rota.
 ## 1. Como executar
 
 Os dois projetos são independentes e **podem rodar ao mesmo tempo** (portas diferentes).
-Cada um tem instruções completas no seu README; o resumo é:
+Cada um tem instruções completas no seu README; o resumo é, partindo **desta pasta**
+(`exercicio-2-protocolos/` — depois do clone, ela é a que fica dentro do repositório):
 
 ```powershell
 # terminal 1 — REST/JSON  (http://localhost:8000)
