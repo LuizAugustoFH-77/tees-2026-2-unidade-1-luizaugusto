@@ -1,0 +1,3 @@
+{
+  "query": "query { usuario(id: 1) { id nome email criadoEm perfil { bio avatarUrl localizacao site } totalSeguidores totalSeguindo totalPosts } }"
+}

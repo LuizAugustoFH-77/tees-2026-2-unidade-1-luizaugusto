@@ -1,0 +1,3 @@
+{
+  "query": "query { feedDoUsuario(usuarioId: 4) { id texto autor { id nome } totalCurtidas totalComentarios } }"
+}

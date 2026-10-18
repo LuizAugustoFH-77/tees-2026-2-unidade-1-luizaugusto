@@ -1,0 +1,3 @@
+{
+  "query": "query { seguindoDe(id: 1) { id nome email totalSeguindo } }"
+}

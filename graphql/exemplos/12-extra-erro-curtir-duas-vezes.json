@@ -1,0 +1,3 @@
+{
+  "query": "mutation { curtir(usuarioId: 4, postId: 3) { criadoEm } }"
+}

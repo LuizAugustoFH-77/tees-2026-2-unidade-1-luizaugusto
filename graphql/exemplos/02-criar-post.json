@@ -1,0 +1,3 @@
+{
+  "query": "mutation { criarPost(usuarioId: 4, texto: \"Chegando agora na rede de exemplo!\") { id texto criadoEm autor { id nome } } }"
+}

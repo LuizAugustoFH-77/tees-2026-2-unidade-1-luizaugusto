@@ -1,0 +1,3 @@
+{
+  "query": "mutation { criarUsuario(nome: \"Davi Rocha\", email: \"davi@exemplo.com\") { id nome email criadoEm totalPosts } }"
+}

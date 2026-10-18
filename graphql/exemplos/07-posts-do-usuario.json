@@ -1,0 +1,3 @@
+{
+  "query": "query { postsDoUsuario(usuarioId: 2) { id texto criadoEm autor { id nome } totalCurtidas totalComentarios } }"
+}

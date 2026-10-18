@@ -1,0 +1,83 @@
+schema {
+  query: Consulta
+  mutation: Mutacao
+}
+
+type Comentario {
+  id: Int!
+  texto: String!
+  criadoEm: DateTime!
+  autor: Usuario!
+  post: Post!
+}
+
+type Consulta {
+  usuario(id: Int!): Usuario
+  postsDoUsuario(usuarioId: Int!): [Post!]!
+  post(id: Int!): Post
+  seguidoresDe(id: Int!): [Usuario!]!
+  seguindoDe(id: Int!): [Usuario!]!
+  feedDoUsuario(usuarioId: Int!): [Post!]!
+}
+
+type Curtida {
+  criadoEm: DateTime!
+  usuario: Usuario!
+  post: Post!
+}
+
+"""Date with time (isoformat)"""
+scalar DateTime
+
+input EntradaPerfil {
+  bio: String! = ""
+  avatarUrl: String! = ""
+  localizacao: String! = ""
+  site: String! = ""
+}
+
+type Mutacao {
+  criarUsuario(nome: String!, email: String!, perfil: EntradaPerfil = null): Usuario!
+  criarPost(usuarioId: Int!, texto: String!): Post!
+  comentar(usuarioId: Int!, postId: Int!, texto: String!): Comentario!
+  curtir(usuarioId: Int!, postId: Int!): Curtida!
+  seguir(usuarioId: Int!, alvoId: Int!): Seguidor!
+}
+
+type Perfil {
+  bio: String!
+  avatarUrl: String!
+  localizacao: String!
+  site: String!
+}
+
+type Post {
+  id: Int!
+  texto: String!
+  criadoEm: DateTime!
+  autor: Usuario!
+  comentarios: [Comentario!]!
+  curtidas: [Curtida!]!
+  totalCurtidas: Int!
+  totalComentarios: Int!
+}
+
+type Seguidor {
+  criadoEm: DateTime!
+  seguidor: Usuario!
+  seguido: Usuario!
+}
+
+type Usuario {
+  id: Int!
+  nome: String!
+  email: String!
+  criadoEm: DateTime!
+  perfil: Perfil!
+  totalSeguidores: Int!
+  totalSeguindo: Int!
+  totalPosts: Int!
+  posts: [Post!]!
+  seguidores: [Usuario!]!
+  seguindo: [Usuario!]!
+}

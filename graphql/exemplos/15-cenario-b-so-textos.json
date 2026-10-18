@@ -1,0 +1,6 @@
+{
+  "query": "query SoTextos($usuarioId: Int!) { feedDoUsuario(usuarioId: $usuarioId) { texto } }",
+  "variables": {
+    "usuarioId": 1
+  }
+}

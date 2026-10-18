@@ -1,0 +1,6 @@
+{
+  "query": "query FeedDetalhado($usuarioId: Int!) { feedDoUsuario(usuarioId: $usuarioId) { id texto criadoEm totalCurtidas totalComentarios autor { id nome } comentarios { id texto autor { id nome } } } }",
+  "variables": {
+    "usuarioId": 1
+  }
+}

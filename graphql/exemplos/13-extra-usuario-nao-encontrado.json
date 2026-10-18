@@ -1,0 +1,3 @@
+{
+  "query": "query { usuario(id: 999) { id nome } }"
+}

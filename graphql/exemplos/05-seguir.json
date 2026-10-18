@@ -1,0 +1,3 @@
+{
+  "query": "mutation { seguir(usuarioId: 4, alvoId: 1) { criadoEm seguidor { id nome } seguido { id nome } } }"
+}
