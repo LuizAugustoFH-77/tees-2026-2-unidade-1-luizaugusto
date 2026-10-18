@@ -842,6 +842,37 @@ RELATÓRIO DESTA EXECUÇÃO
 - **Cenário B** — "quero só os textos do feed": 1 requisição e **222 bytes**, contra 860
   bytes do REST, porque aqui dá para pedir apenas `texto`.
 
+Os dois pedidos usados na medição, para rodar na mão quando quiser (o do cenário A está na
+seção 5.7; o do cenário B é este):
+
+`exemplos/15-cenario-b-so-textos.json`:
+
+```json
+{
+  "query": "query SoTextos($usuarioId: Int!) { feedDoUsuario(usuarioId: $usuarioId) { texto } }",
+  "variables": { "usuarioId": 1 }
+}
+```
+
+```bash
+curl.exe -s -X POST http://localhost:8001/graphql -H "Content-Type: application/json" --data-binary @exemplos/15-cenario-b-so-textos.json
+```
+
+Resposta — `200 OK` (repare: só `texto`, nada de autor, e-mail ou contadores):
+
+```json
+{
+  "data": {
+    "feedDoUsuario": [
+      { "texto": "GraphQL resolve o feed em uma requisição" },
+      { "texto": "Escrevendo sobre REST x GraphQL" },
+      { "texto": "Carla estreando no feed" },
+      { "texto": "Primeiro post do Bruno: testando a API" }
+    ]
+  }
+}
+```
+
 Se o `demonstracao.py` avisar que o servidor não está limpo, é porque ele já rodou nesse servidor:
 pare o servidor (`Ctrl+C`), suba de novo e rode o `demonstracao.py` outra vez.
 

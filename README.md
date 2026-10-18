@@ -1,7 +1,7 @@
 # Atividade 02 — APIs e protocolos: o mesmo domínio em REST/JSON e em GraphQL
 
 **Disciplina:** Tópicos Especiais em Engenharia de Software
-**Aluno:** Luiz Augusto
+**Aluno:** Luiz Augusto Farias Hora
 **Objetivo da atividade:** sentir na prática a diferença entre dois protocolos ao expor
 o **mesmo domínio** (uma rede social simplificada) e saber quando cada um serve.
 
@@ -16,7 +16,7 @@ expõe um *grafo de tipos* consultável pelo cliente em uma única rota.
 
 ---
 
-## 1. Como executar (resumo)
+## 1. Como executar
 
 Os dois projetos são independentes e **podem rodar ao mesmo tempo** (portas diferentes).
 Cada um tem instruções completas no seu README; o resumo é:
